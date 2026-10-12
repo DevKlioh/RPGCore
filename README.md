@@ -24,3 +24,6 @@ This website documents the supplied Quest Rotation source archive. It is not a l
 
 ## Interactive Class Encyclopedia
 Select one of seven class paths, inspect all three class ranks, and choose any of 147 active skills. The level 1–10 simulator uses damage, targeting, and healing settings extracted from the bundled `skills.yml` and the RPGCore skill damage formula. Values are estimates excluding allocated character stats and passive boosts.
+
+## Job Preview design
+The Classes page uses a Minecraft-style class selection layout, with class roster, illustrative voxel character, rank progression and interactive skill damage comparisons. The character art is illustrative and is not an in-game skin or model.
