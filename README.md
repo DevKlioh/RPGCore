@@ -20,3 +20,7 @@ Open `index.html` in a modern browser. The site uses static HTML, CSS and JavaSc
 - `data.js` is generated from the RPGCore v0.0.1 Quest Rotation source archive and contains class, quest and configuration reference data.
 
 This website documents the supplied Quest Rotation source archive. It is not a live-server test report.
+
+
+## Interactive Class Encyclopedia
+Select one of seven class paths, inspect all three class ranks, and choose any of 147 active skills. The level 1–10 simulator uses damage, targeting, and healing settings extracted from the bundled `skills.yml` and the RPGCore skill damage formula. Values are estimates excluding allocated character stats and passive boosts.
