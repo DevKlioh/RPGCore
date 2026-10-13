@@ -23,3 +23,68 @@
 @keyframes heroReveal{from{opacity:0;transform:translateY(22px) scale(.94);filter:blur(6px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
 @media(prefers-reduced-motion:reduce){.job-portrait{animation:none!important}.job-scene .path-tile,.job-scene .evolution-node,.job-scene .skill-pick{transition:none!important}}
 @media(max-width:700px){.job-portrait{inset:60px 0 210px!important}.job-stage{min-height:650px!important}}
+
+/* Cinematic illustrated class roster, replacing flat paper-doll character renders. */
+.job-stage{min-height:790px!important;background:#0a1025!important;border-color:#8b6f55!important;box-shadow:inset 0 0 40px #030916,0 15px 45px #03071499!important}
+.job-stage:before{background:radial-gradient(circle at 50% 42%,color-mix(in srgb,var(--job-accent) 18%,transparent),transparent 72%)!important;z-index:0!important;pointer-events:none}
+.job-portrait{inset:48px 0 170px!important;background-size:cover!important;background-position:center 38%!important;filter:none!important;mask-image:linear-gradient(to bottom,transparent 0%,#000 8%,#000 69%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 8%,#000 69%,transparent 100%);animation:cinematicArrival .52s cubic-bezier(.2,.8,.2,1) both!important}
+.job-caption{background:linear-gradient(0deg,#080f23 68%,#080f23eb 84%,transparent)!important;padding-top:36px!important}
+.job-scene .path-tile{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,background .22s ease!important;cursor:pointer}
+.job-scene .path-tile:hover{transform:translateX(4px);box-shadow:0 0 25px color-mix(in srgb,var(--job-accent) 28%,transparent)!important}
+.job-scene .path-tile:focus-visible,.job-scene .skill-pick:focus-visible,.job-scene .evolution-node:focus-visible{outline:3px solid #f8d387;outline-offset:3px}
+.job-scene .path-symbol{background-image:var(--path-icon)!important;background-size:cover!important;background-position:center!important;font-size:0!important}
+.job-scene .path-tile.on{box-shadow:0 0 22px #edb75c55,inset 3px 0 #ffe0a0!important}
+@keyframes cinematicArrival{from{opacity:.12;transform:translateY(15px) scale(1.055);filter:blur(7px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+@media(prefers-reduced-motion:reduce){.job-portrait{animation:none!important}.job-scene .path-tile{transition:none!important}}
+@media(max-width:700px){.job-portrait{inset:40px 0 160px!important}.job-stage{min-height:620px!important}}
+
+/* v0.0.1 visual stability patch: never zoom/crop class artwork */
+.job-scene{align-items:start;min-height:0}
+.job-stage{height:auto!important;min-height:0!important;align-self:start;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden}
+.job-scene-top{position:relative;inset:auto;top:auto;left:auto;right:auto;padding:15px 14px 10px;min-height:51px;flex-shrink:0}
+.job-portrait{position:relative!important;inset:auto!important;display:block;width:calc(100% - 22px);height:clamp(220px,27vw,390px);margin:0 11px 4px;border-radius:12px;background-color:#0b1426;background-image:var(--job-art)!important;background-repeat:no-repeat!important;background-size:contain!important;background-position:center center!important;mask-image:none!important;-webkit-mask-image:none!important;filter:none!important;transform-origin:center;will-change:auto;animation:characterSwitch .32s cubic-bezier(.22,.7,.2,1) both!important}
+.job-caption{padding:14px 16px 17px!important;background:linear-gradient(180deg,#13213b,#0c1529)!important;flex:1}
+.job-caption h2{font-size:clamp(22px,2.4vw,30px)!important;margin:5px 0 7px!important}
+.job-caption p{min-height:0!important;margin:0 0 10px;font-size:11px!important}
+.job-level-band{margin-top:9px!important;padding:9px!important}
+.job-art-note{margin-top:9px!important}
+.job-roster,.job-information{align-self:start}
+.job-scene .path-tile{transition:background-color .16s ease,border-color .16s ease,box-shadow .16s ease,transform .16s ease!important}
+.job-scene .path-tile:hover{transform:translateX(2px)!important}
+.job-scene .path-tile:focus-visible,.job-scene .evolution-node:focus-visible,.job-scene .skill-pick:focus-visible{outline:2px solid #ffe1a0;outline-offset:2px}
+@keyframes characterSwitch{from{opacity:0;transform:translateY(8px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:1120px){.job-portrait{height:clamp(240px,39vw,390px)}}
+@media(max-width:680px){.job-portrait{height:clamp(230px,72vw,380px)}.job-stage{min-height:0!important}}
+@media(prefers-reduced-motion:reduce){.job-portrait{animation:none!important}}
+
+/* Rank gallery: stable artwork sizing and light-weight transitions */
+.job-portrait{height:clamp(270px,31vw,430px)!important;background-size:contain!important;background-position:center!important;animation:rankReveal .34s ease-out both!important;}
+@keyframes rankReveal{from{opacity:.35;transform:translateY(7px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+.job-stage{overflow:hidden!important}.job-scene{min-width:0}.job-information{min-width:0}
+@media(max-width:700px){.job-portrait{height:clamp(240px,70vw,360px)!important}}
+@media(prefers-reduced-motion:reduce){.job-portrait{animation:none!important}}
+
+/* RPGCore documentation edition: compact, accessible, image-free class encyclopedia. */
+#content:has(.class-showcase){max-width:1300px;padding:30px 32px 55px}
+#content:has(.class-showcase)>h1,#content:has(.class-showcase)>.lead,#content:has(.class-showcase)>.eyebrow{display:block}
+.class-showcase{border:1px solid #334769;border-radius:16px;background:#101a2d;padding:24px;min-width:0}
+.class-path-header{margin-bottom:20px}.class-path-header h2{font-size:clamp(21px,2.3vw,30px);margin:7px 0}.class-path-header p{color:#adbfdb}
+.class-showcase .path-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;margin:0 0 26px}
+.class-showcase .path-tile{min-height:104px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:7px;padding:14px;border:1px solid #385071;border-radius:11px;background:#16243c;color:#f1f5ff;cursor:pointer;transition:background .17s ease,border-color .17s ease,transform .17s ease}
+.class-showcase .path-tile:hover{transform:translateY(-2px);background:#203657;border-color:#8ca8e8}
+.class-showcase .path-tile.on{border-color:#e4bd73;background:#302e3b;box-shadow:inset 0 3px #e4bd73}
+.class-showcase .path-symbol{font-size:24px;color:#edc783}.class-showcase .path-tile strong{font-size:15px}.class-showcase .path-tile small{font-size:11px;line-height:1.5;color:#bac9df}
+.class-showcase .progression-title{margin:14px 0;font-size:13px;font-weight:800;letter-spacing:.9px;color:#e8c98b}.class-showcase .progression-title span{font-weight:400;letter-spacing:0;color:#a8bddb;margin-left:8px}
+.class-showcase .evolution{display:flex;align-items:stretch;gap:8px;margin-bottom:24px}
+.class-showcase .evolution-node{flex:1;min-width:0;min-height:120px;padding:17px 12px;border-radius:12px;border:1px solid #3d5375;background:#17263e;text-align:left;color:#f5f7ff;cursor:pointer;display:flex;flex-direction:column;gap:9px;transition:background .17s ease,border-color .17s ease}
+.class-showcase .evolution-node:hover{background:#233959;border-color:#a1b5e2}.class-showcase .evolution-node.on{background:#363247;border-color:#e4bd73}
+.class-showcase .evolution-node strong{font-size:clamp(12px,1.4vw,18px);overflow-wrap:anywhere}.class-showcase .evolution-node small{font-size:11px;color:#b6c9e4}.class-showcase .rank-badge{font-size:10px;color:#edc985;letter-spacing:1px}.class-showcase .rank-cta{font-size:11px;color:#b8a3ff;margin-top:auto}.class-showcase .evo-arrow{align-self:center;color:#e5bd73;font-size:24px}
+.class-showcase .skill-workspace{display:grid;grid-template-columns:minmax(230px,.9fr) minmax(310px,1.1fr);gap:14px;align-items:start}
+.class-showcase .skill-panel,.class-showcase .skill-detail{background:#111f35;border:1px solid #354b69;border-radius:13px;padding:19px;min-width:0}
+.class-showcase .skill-picker{display:grid;grid-template-columns:1fr;gap:8px;margin-top:13px}.class-showcase .skill-pick{display:flex;align-items:center;text-align:left;gap:11px;min-height:58px;padding:9px 12px;background:#1b2b46;border:1px solid #385070;border-radius:9px;color:#eff4ff;cursor:pointer;transition:background .16s ease,border-color .16s ease}
+.class-showcase .skill-pick:hover{background:#2a4163}.class-showcase .skill-pick.on{background:#393344;border-color:#e6c07d}.class-showcase .skill-orb{display:grid;place-items:center;min-width:34px;height:34px;background:#344866;border:1px solid #7082a0;border-radius:9px;color:#ffe4ad}.class-showcase .skill-pick strong{font-size:13px}.class-showcase .skill-pick small{display:block;font-size:10px;color:#b8c8df;margin-top:3px}.class-showcase .pick-arrow{margin-left:auto}
+.class-showcase .skill-detail h2{font-size:24px;margin:12px 0}.class-showcase .passive-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.class-showcase .passive-chip{padding:8px 10px;border:1px solid #455677;border-radius:8px;font-size:12px}
+.class-showcase button:focus-visible{outline:3px solid #ffd27e;outline-offset:2px}
+@media(max-width:850px){.class-showcase .skill-workspace{grid-template-columns:1fr}.class-showcase .skill-picker{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:580px){#content:has(.class-showcase){padding:16px 12px}.class-showcase{padding:13px}.class-showcase .path-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.class-showcase .evolution{gap:4px}.class-showcase .evolution-node{padding:11px 7px;min-height:120px}.class-showcase .evo-arrow{font-size:14px}.class-showcase .skill-picker{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.class-showcase button{transition:none!important}}
